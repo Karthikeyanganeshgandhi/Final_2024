@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -248,17 +250,17 @@ img{
          </div>
          <nav class="canvas-menu mobile-menu">
              <ul>
-                 <li><a href="./index.html">Home</a></li>
-                 <li><a href="./about-us.html">About Us</a></li>
-                 <li><a href="./class-details.html">EQUIPMENTS</a></li>
-                 <li><a href="./services.html">USER</a></li>
+                 <li><a href="{% url 'index' %}">Home</a></li>
+                 <li><a href="{% url 'aboutus' %}">About Us</a></li>
+                 <li><a href="{% url 'details' %}">EQUIPMENTS</a></li>
+                 <li><a href="{% url 'user' %}">USER</a></li>
                  <!-- <li><a href="./team.html">Our Team</a></li> -->
                  <li><a href="#">Pages</a>
                      <ul class="dropdown">
-                         <li><a href="./index.html">Home</a></li>
+                         <li><a href="{% url 'index' %}">Home</a></li>
                          <li><a href="#client">Reviews</a></li>
-                         <li><a href="./cart_page.html">My Cart</a></li>
-                         <li><a href="./your_orders.html">My Orders</a></li>
+                         <li><a href="{% url 'cartpage' %}">My Cart</a></li>
+                         <li><a href="{% url 'yourorders' %}">My Orders</a></li>
                      </ul>
                  </li>
                  <li><a href="./contact.html">Contact</a></li>
@@ -289,10 +291,10 @@ img{
             <div class="col-lg-6">
                 <nav class="nav-menu">
                     <ul>
-                        <li class="active"><a href="./index.html">Home</a></li>
-                        <li><a href="./about-us.html">About Us</a></li>
-                        <li><a href="./class-details.html">Equipments</a></li>
-                        <li><a href="./services.html">USER</i></a></li>
+                        <li class="active"><a href="{% url 'index' %}">Home</a></li>
+                        <li><a href="{% url 'aboutus' %}">About Us</a></li>
+                        <li><a href="{% url 'details' %}">Equipments</a></li>
+                        <li><a href="{% url 'user' %}">USER</i></a></li>
                         <!-- <li><a href="./team.html">Our Team</a></li>
                         <li><a href="#">Pages</a>
                             <ul class="dropdown">
@@ -407,10 +409,10 @@ img{
                         <div class = "purchase-info">
                           <input type = "number" min = "0" value = "1">
                           <button type = "button" class = "btn">
-                            <a href="./cart_page.html" style="color: white;text-decoration: none;">
+                            <a href="{% url 'cartpage' %}" style="color: white;text-decoration: none;">
                                 Add to Cart <i class = "fas fa-shopping-cart"></i></a>
                           </button>
-                          <button type = "button" class = "btn"><a href="./order_summary.html" style="color: white; text-decoration: none;">BUY NOW</a></button>
+                          <button type = "button" class = "btn"><a href="{% url 'summary' %}" style="color: white; text-decoration: none;">BUY NOW</a></button>
                         </div>
                   
                         <div class = "social-links">

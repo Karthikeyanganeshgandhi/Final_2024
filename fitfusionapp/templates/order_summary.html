@@ -16,7 +16,7 @@
      <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" type="text/css">
      <link rel="stylesheet" href="{% static 'css/flaticon.css' %}" type="text/css">
      <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}" type="text/css">
-     <link rel="stylesheet" href="{% static 'css/barfiller.css; %}" type="text/css">
+     <link rel="stylesheet" href="{% static 'css/barfiller.css' %}" type="text/css">
      <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}" type="text/css">
      <link rel="stylesheet" href="{% static 'css/slicknav.min.css' %}" type="text/css">
      <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
@@ -159,17 +159,17 @@
          </div>
          <nav class="canvas-menu mobile-menu">
              <ul>
-                 <li><a href="./index.html">Home</a></li>
-                 <li><a href="./about-us.html">About Us</a></li>
-                 <li><a href="./class-details.html">EQUIPMENTS</a></li>
-                 <li><a href="./services.html">USER</a></li>
+                 <li><a href="{% url 'index' %}">Home</a></li>
+                 <li><a href="{% url 'aboutus' %}">About Us</a></li>
+                 <li><a href="{% url 'details' %}">EQUIPMENTS</a></li>
+                 <li><a href="{% url 'user' %}">USER</a></li>
                  <!-- <li><a href="./team.html">Our Team</a></li> -->
                  <li><a href="#">Pages</a>
                      <ul class="dropdown">
-                         <li><a href="./index.html">Home</a></li>
+                         <li><a href="{% url 'index' %}">Home</a></li>
                          <li><a href="#client">Reviews</a></li>
-                         <li><a href="./cart_page.html">My Cart</a></li>
-                         <li><a href="./your_orders.html">My Orders</a></li>
+                         <li><a href="{% url 'cartpage' %}">My Cart</a></li>
+                         <li><a href="{% url 'yourorders' %}">My Orders</a></li>
                      </ul>
                  </li>
                  <li><a href="./contact.html">Contact</a></li>
@@ -193,17 +193,17 @@
                 <div class="col-lg-3">
                     <div class="logo">
                         <a href="./index.html">
-                            <img src="img/logo.png" alt="">
+                            <img src="{% static 'img/logo.png' %}" alt="">
                         </a>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <nav class="nav-menu">
                         <ul>
-                            <li><a href="./index.html">Home</a></li>
-                            <li><a href="./about-us.html">About Us</a></li>
-                            <li><a href="./class-details.html">EQUIPMENTS</a></li>
-                            <li><a  href="./services.html">USER</a></li>
+                            <li><a href="{% url 'index' %}">Home</a></li>
+                            <li><a href="{% url 'aboutus' %}">About Us</a></li>
+                            <li><a href="{% url 'details' %}">EQUIPMENTS</a></li>
+                            <li><a  href="{% url 'user' %}">USER</a></li>
                             <!-- <li><a href="./team.html">Our Team</a></li> -->
                             <!-- <li><a href="#">Pages</a>
                                 <ul class="dropdown">
@@ -276,7 +276,7 @@
                                 
                             </div>
                             <div class="col-1" style="padding: 20px;">
-                                <a href="./addresses.html"><button style="background-color: white;color: blue;border: solid 1px blue;font-weight: bold;width: 100px;">Change</button></a>
+                                <a href="{% url 'address' %}"><button style="background-color: white;color: blue;border: solid 1px blue;font-weight: bold;width: 100px;">Change</button></a>
                             </div>
                         </div>
                         <div class="row">

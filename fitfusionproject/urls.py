@@ -16,23 +16,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include , path
-from fitfusionapp import views
 
 urlpatterns = [
     path('',include('fitfusionapp.urls')),
-    path('index/aboutus/',views.aboutus, name='aboutus'),
-    path('index/aboutus/signin/',views.signin,name='signin'),
-    path('index/aboutus/signin/register/',views.register,name='register'),
-    path('index/aboutus/signin/register/contact/',views.contact,name='contact'),
-    path('index/aboutus/signin/register/contact/trainingkit/',views.trainingkit,name='trainingkit'),
-    path('index/aboutus/signin/register/contact/trainingkit/overproduct/',views.overproduct,name='overproduct'),
-    path('index/aboutus/signin/register/contact/trainingkit/overproduct/summary/',views.summary,name='summary'),
-    path('index/aboutus/signin/register/contact/trainingkit/overproduct/summary/foldablebench/',views.foldablebench,name='foldablebench'),
-    path('index/aboutus/signin/register/contact/trainingkit/overproduct/summary/foldablebench/cartpage/',views.cartpage,name='cartpage'),
-    path('index/aboutus/signin/register/contact/trainingkit/overproduct/summary/foldablebench/cartpage/address/',views.address,name='address'),
-    path('index/aboutus/signin/register/contact/trainingkit/overproduct/summary/foldablebench/cartpage/address/user/',views.user,name='user'),
-    path('index/aboutus/signin/register/contact/trainingkit/overproduct/summary/foldablebench/cartpage/address/user/yourorders/',views.yourorders,name='yourorders'),
-    path('index/aboutus/signin/register/contact/trainingkit/overproduct/summary/foldablebench/cartpage/address/user/yourorders/dumbell/',views.dumbell,name='dumbell'),
-      path('index/aboutus/signin/register/contact/trainingkit/overproduct/summary/foldablebench/cartpage/address/user/yourorders/dumbell/details/',views.details,name='details'),
     path('admin/', admin.site.urls),
 ]

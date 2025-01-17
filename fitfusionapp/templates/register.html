@@ -171,17 +171,17 @@
          </div>
          <nav class="canvas-menu mobile-menu">
              <ul>
-                 <li><a href="./index.html">Home</a></li>
-                 <li><a href="./about-us.html">About Us</a></li>
-                 <li><a href="./class-details.html">EQUIPMENTS</a></li>
-                 <li><a href="./services.html">USER</a></li>
+                 <li><a href="{% url 'index' %}">Home</a></li>
+                 <li><a href="{% url 'aboutus' %}">About Us</a></li>
+                 <li><a href="{% url 'details' %}">EQUIPMENTS</a></li>
+                 <li><a href="{% url 'user' %}">USER</a></li>
                  <!-- <li><a href="./team.html">Our Team</a></li> -->
                  <li><a href="#">Pages</a>
                      <ul class="dropdown">
-                         <li><a href="./index.html">Home</a></li>
+                         <li><a href="{% url 'index' %}">Home</a></li>
                          <li><a href="#client">Reviews</a></li>
-                         <li><a href="./cart_page.html">My Cart</a></li>
-                         <li><a href="./your_orders.html">My Orders</a></li>
+                         <li><a href="{% url 'cartpage' %}">My Cart</a></li>
+                         <li><a href="{% url 'yourorders' %}">My Orders</a></li>
                      </ul>
                  </li>
                  <li><a href="./contact.html">Contact</a></li>
@@ -212,10 +212,10 @@
                 <div class="col-lg-6">
                     <nav class="nav-menu">
                         <ul>
-                            <li class="active"><a href="./index.html">Home</a></li>
-                            <li><a href="./about-us.html">About Us</a></li>
-                            <li><a href="./class-details.html">EQUIPMENTS</a></li>
-                            <li><a href="./services.html">USER</a></li>
+                            <li class="active"><a href="{% url 'index' %}">Home</a></li>
+                            <li><a href="{% url 'aboutus' %}">About Us</a></li>
+                            <li><a href="{% url 'details' %}">EQUIPMENTS</a></li>
+                            <li><a href="{% url 'user' %}">USER</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -239,6 +239,8 @@
         <div class="container">
             <div class="row m-5">
                 <div class="col-4 text-center"><br><br><br>
+                    <form method="post">    
+                    {% csrf_token %}
                     <h4 style="color: orangered;"><u>REGISTER TO FIT FUSION</u></h4>
                 </div>
             </div>
@@ -246,40 +248,47 @@
             <div class="row">
                 <div class="col-5">
                     <h5 style="color: orangered; font-weight: bold;">First Name :</h5>
-                    <input type="text" placeholder="First Name" class="form-control">
+                    {{ form.first_name }}
+                    {{ form.first_name.errors }}
                 </div>
                 <div class="col-5">
                     <h5 style="color: orangered; font-weight: bold;">Last Name :</h5>
-                    <input type="text" placeholder="Last Name" class="form-control">
+                    {{ form.last_name }}
+                    {{ form.last_name.errors }}
                 </div>
             </div>
 
             <div class="row m-5">
                 <div class="col-5">
                     <h5 style="color: orangered; font-weight: bold;">E-mail :</h5>
-                    <input type="text" placeholder="E-mail" class="form-control">
+                    {{ form.email }}
+                    {{ form.email.errors }}
                 </div>
                 <div class="col-5">
                     <h5 style="color: orangered; font-weight: bold;">Password :</h5>
-                    <input type="password" placeholder="Password" class="form-control">
+                    {{ form.passwd }}
+                    {{ form.passwd.errors }}
                 </div>
             </div>
 
             <div class="row m-5">
                 <div class="col-4">
                     <h5 style="color: orangered; font-weight: bold;">Phone Number :</h5>
-                    <input type="text" placeholder="Phone Number" class="form-control">
+                    {{ form.phone_number }}
+                    {{ form.phone_number.errors }}
                 </div>
             </div>
 
             <div class="row m-5">
                 <div class="col-4">
                     <button style="color: white; background-color: orangered; width: 100%; height: 45px; font-weight: bold;" class="rounded-pill">SUBMIT</button><br><br>
-                    <a href="./index.html" style="font-weight: bold; color: black;"><--HOME</a>
+                    <a href="{% url 'index' %}" style="font-weight: bold; color: black;"><--HOME</a>
                 </div>
             </div>
         </div>
+    </form>
     </section>
+
     <!-- Hero Section End -->
 
     <!-- Footer Section Begin -->

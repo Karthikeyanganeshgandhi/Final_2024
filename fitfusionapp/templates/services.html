@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -117,10 +119,10 @@ body, html {
             </div>
             <nav class="canvas-menu mobile-menu">
                 <ul>
-                    <li><a href="./index.html">Home</a></li>
-                    <li><a href="./about-us.html">About Us</a></li>
-                    <li><a href="./class-details.html">EQUIPMENTS</a></li>
-                    <li><a href="./services.html">USER</a></li>
+                    <li><a href="{% url 'index' %}">Home</a></li>
+                    <li><a href="{% url 'aboutus' %}">About Us</a></li>
+                    <li><a href="{% url 'details' %}">EQUIPMENTS</a></li>
+                    <li><a href="{% url 'user' %}">USER</a></li>
                     <!-- <li><a href="./team.html">Our Team</a></li> -->
                     <li><a href="#">Pages</a>
                         <ul class="dropdown">
@@ -158,10 +160,10 @@ body, html {
                 <div class="col-lg-6">
                     <nav class="nav-menu">
                         <ul>
-                            <li><a href="./index.html">Home</a></li>
-                            <li><a href="./about-us.html">About Us</a></li>
-                            <li><a href="./class-details.html">Equipments</a></li>
-                            <li class="active"><a href="./services.html">USER</i></a></li>
+                            <li><a href="{% url 'index' %}">Home</a></li>
+                            <li><a href="{% url 'aboutus' %}">About Us</a></li>
+                            <li><a href="{% url 'details' %}">Equipments</a></li>
+                            <li class="active"><a href="{% url 'user' %}">USER</i></a></li>
                             <!-- <li><a href="./team.html">Our Team</a></li> -->
                             <!-- <li><a href="#">Pages</a>
                                 <ul class="dropdown">
@@ -216,12 +218,12 @@ body, html {
     </div>
     <!-- <nav class="canvas-menu mobile-menu"> -->
         <ul>
-            <li><a href="./index.html"  style="color: black;">Home</a></li>
-            <li><a href="./about-us.html"  style="color: black;">About Us</a></li>
-            <li><a href="./class-details.html"  style="color: black;">Equipments</a></li>
-            <li><a href="./services.html"  style="color: black;">USER</a></li>
-            <li><a href="./cart_page.html" style="color: black;">My Cart</a></li>
-            <li><a href="./your_orders.html" style="color: black;">My Orders</a></li>
+            <li><a href="{% url 'index' %}"  style="color: black;">Home</a></li>
+            <li><a href="{% url 'aboutus' %}"  style="color: black;">About Us</a></li>
+            <li><a href="{% url 'details' %}"  style="color: black;">Equipments</a></li>
+            <li><a href="{% url 'user' %}"  style="color: black;">USER</a></li>
+            <li><a href="{% url 'cartpage' %}" style="color: black;">My Cart</a></li>
+            <li><a href="{% url 'yourorders' %}" style="color: black;">My Orders</a></li>
         </ul>
     </nav>
     <div id="mobile-menu-wrap"></div>
@@ -247,10 +249,10 @@ body, html {
             <div class="col-lg-6">
                 <nav class="nav-menu">
                     <ul>
-                        <li><a href="./index.html">Home</a></li>
-                        <li><a href="./about-us.html">About Us</a></li>
-                        <li><a href="./class-details.html">Equipments</a></li>
-                        <li><a href="./services.html">USER</a></li>
+                        <li><a href="{% url 'index' %}">Home</a></li>
+                        <li><a href="{% url 'aboutus' %}">About Us</a></li>
+                        <li><a href="{% url 'details' %}">Equipments</a></li>
+                        <li><a href="{% url 'user' %}">USER</a></li>
                     </ul>
                 </nav>
             </div>
@@ -299,32 +301,32 @@ body, html {
                 <h2 style="font-weight: bold; color: white;"><U>YOUR ACCOUNT</U></h2><br></br>
                 <div class="row mb-5">
                     <div class="col-12 col-md-4">
-                        <div class="service-card mb-3" style="border: solid 1px orangered;">
+                        <a href="{% url 'yourorders' %}"> <div class="service-card mb-3" style="border: solid 1px orangered;">
                             <i class="fa-solid fa-inbox" style="color: orangered; font-size: 35px; padding: 30px;"></i><br>
-                            <span class="service-title"><a href="./your_orders.html" style="color: white;">Your Orders</a></span>
+                            <span class="service-title" style="color: white;">Your Orders</span>
                             <span style="color: white;">Track, Return or Buy <br>
                                  again</span>
-                        </div>
+                        </div></a>
                     </div>
 
                     <div class="col-12 col-md-4 mb-3">
-                        <div class="service-card" style="border: solid 1px orangered;">
-                            <a href="./register.html">
+                        <a href="{% url 'register' %}"> <div class="service-card" style="border: solid 1px orangered;">
+                            
                                 <i class="fa-solid fa-lock" style="color: orangered; font-size: 35px; padding: 30px;"></i><br>
                                 <span class="service-title" style="color:white">Login & Security</span>
                                 <span style="color: white;">Edit login, name, and Mobile Number</span>
-                            </a>
-                        </div>
+                            
+                        </div></a>
                     </div>
 
                     <div class="col-12 col-md-4 mb-3">
-                        <div class="service-card" style="border: solid 1px orangered;">
-                            <a href="./addresses.html">
+                        <a href="{% url 'address' %}"><div class="service-card" style="border: solid 1px orangered;">
+                            
                                 <i class="fa-solid fa-location-dot" style="color: orangered; font-size: 35px; padding: 30px;"></i><br>
                                 <span class="service-title" style="color: white">Your Addresses</span>
                                 <span style="color: white;">Edit addresses for orders and gifts</span>
-                            </a>
-                        </div>
+                           
+                        </div> </a>
                     </div>
                 </div>
 
@@ -332,11 +334,12 @@ body, html {
                     <div class="col-lg-12">
                         <div class="row mb-5">
                             <div class="col-12 col-md-4">
-                                <div class="service-card mb-3" style="border: solid 1px orangered;">
+                                <a href="{% url 'contact' %}"> <div class="service-card mb-3" style="border: solid 1px orangered;">
                                     <i class="fa-solid fa-headphones" style="color: orangered; font-size: 35px; padding: 30px;"></i><br>
-                                    <span class="service-title"><a href="./contact.html" style="color: white;">contacts</a></span>
-                                    <span style="color: white;">Help & FAQ
-                                         again</span>
+                                    <span class="service-title" style="color: white;"> contacts</a></span>
+                                    <span style="color: white;">Help & FAQagain</span></a>
+                            </div>
+                                         
                                 </div>
                             </div>
                         </div>

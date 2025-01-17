@@ -1,8 +1,12 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 
 # Create your views here.
 from django.http import HttpResponse
 from django.template import loader
+from .forms import signform 
+from django.contrib.auth import authenticate, login
+from django.contrib import messages
+from django.contrib.auth.models import User
 
 def index(request):
     template = loader.get_template('index.html')
@@ -13,17 +17,53 @@ def aboutus(request):
     return HttpResponse(template.render())
 
 def signin(request):
-    template=loader.get_template('signin.html')
-    return HttpResponse(template.render())
+    if request.method == 'POST':
+        form = signform(request.POST)
+        if form.is_valid():
+            email = form.cleaned_data['email']
+            password = form.cleaned_data['password']
+            user = authenticate(request, username=email, password=password)
+            if user is not None:
+                login(request, user)
+                return redirect('details') 
+            else:
+                messages.error(request, 'Invalid email or password')
+    else:
+        form = signform()
+
+    return render(request, 'signin.html', {'form': form})
+
+from .forms import registerform  
 
 def register(request):
-    template=loader.get_template('register.html')
-    return HttpResponse(template.render())
+    if request.method == 'POST':
+        form = registerform(request.POST)
+        if form.is_valid():
+            first_name = form.cleaned_data['first_name']
+            last_name = form.cleaned_data['last_name']
+            email = form.cleaned_data['email']
+            passwd = form.cleaned_data['passwd']
+            # phone_number = form.cleaned_data['phone_number']
+            
+            user = User.objects.create_user(username=email, email=email, password=passwd)
+            user.first_name = first_name
+            user.last_name = last_name
+            user.save()
+
+            messages.success(request, f'Account created for {first_name} {last_name}')
+            return redirect('signin')
+    else:
+        form = registerform()
+    return render(request, 'register.html', {'form':form})
+
+            
+
+   
 
 def contact(request):
     template=loader.get_template('contact.html')
     return HttpResponse(template.render())
-def trainingkit(request):
+def kit(request):
     template=loader.get_template('training_kit.html')
     return HttpResponse(template.render())
 def overproduct(request):

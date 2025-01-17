@@ -115,17 +115,17 @@
        </div>
        <nav class="canvas-menu mobile-menu">
            <ul>
-               <li><a href="./index.html">Home</a></li>
-               <li><a href="./about-us.html">About Us</a></li>
-               <li><a href="./class-details.html">EQUIPMENTS</a></li>
-               <li><a href="./services.html">USER</a></li>
+               <li><a href="{% url 'index' %}">Home</a></li>
+               <li><a href="{% url 'aboutus' %}">About Us</a></li>
+               <li><a href="{% url 'details' %}">EQUIPMENTS</a></li>
+               <li><a href="{% url 'user' %}">USER</a></li>
                <!-- <li><a href="./team.html">Our Team</a></li> -->
                <li><a href="#">Pages</a>
                    <ul class="dropdown">
-                       <li><a href="./index.html">Home</a></li>
+                       <li><a href="{% url 'index' %}">Home</a></li>
                        <li><a href="#client">Reviews</a></li>
-                       <li><a href="./cart_page.html">My Cart</a></li>
-                       <li><a href="./your_orders.html">My Orders</a></li>
+                       <li><a href="{% url 'cartpage' %}">My Cart</a></li>
+                       <li><a href="{% url 'yourorders' %}">My Orders</a></li>
                    </ul>
                </li>
                <li><a href="./contact.html">Contact</a></li>
@@ -156,10 +156,10 @@
                 <div class="col-lg-6">
                     <nav class="nav-menu">
                         <ul>
-                            <li class="active"><a href="./index.html">Home</a></li>
-                            <li><a href="./about-us.html">About Us</a></li>
-                            <li><a href="./class-details.html">EQUIPMENTS</a></li>
-                            <li><a href="./services.html">USER</a></li>
+                            <li class="active"><a href="{% url 'index' %}">Home</a></li>
+                            <li><a href="{% url 'aboutus' %}">About Us</a></li>
+                            <li><a href="{% url 'details' %}">EQUIPMENTS</a></li>
+                            <li><a href="{% url 'user' %}">USER</a></li>
                             <!-- <li><a href="#">Pages</a>
                                 <ul class="dropdown">
                                     <li><a href="./about-us.html">About us</a></li>
@@ -200,15 +200,22 @@
         <div class="hs-slider owl-carousel">
             <div class="hs-item set-bg" data-setbg="{% static 'img/grayscale-front-lat-spread-chris-bumstead-1pvqv4leppcl3jzq.jpg' %}">
                 <div class="container">
-                    <form>
+                    <form method="post">
+                        {% csrf_token %}
                         <h1 style="color: orangered; text-align: center; margin-top: -90px;">
                             <span style="font-size: 100px;">Login</span>
                         </h1><br><br><br>
-                        <input type="text" placeholder="E-mail" class="form-control"><br><br><br>
-                        <input type="password" placeholder="Password" class="form-control"><br><br><br>
+                        <h5 style="color: orangered; font-weight: bold;">E-MAIL:</h5>
+                        {{ form.email }}
+                        {{ form.email.errors }}
+                        <br><br><br>
+                        <h5 style="color: orangered; font-weight: bold;">Password:</h5>
+                        {{ form.password }}
+                        {{ form.Password.errors }}
+                        <br><br>
                         <button class="rounded-pill">SIGN IN</button><br><br>
                         <p style="color: white; font-weight: bolder; font-size: 13px; text-align: center;">
-                            Don't have an Account? >><a href="./register.html" style="font-size: 15px; color: orangered; font-weight: bold;">Register Now</a>
+                            Don't have an Account? >><a href="{% url 'register' %}" style="font-size: 15px; color: orangered; font-weight: bold;">Register Now</a>
                         </p>
                     </form>
                 </div>

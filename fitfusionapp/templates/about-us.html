@@ -44,10 +44,10 @@
       </div>
       <nav class="canvas-menu mobile-menu">
           <ul>
-              <li><a href="./index.html">Home</a></li>
-              <li><a href="./about-us.html">About Us</a></li>
-              <li><a href="./class-details.html">EQUIPMENTS</a></li>
-              <li><a href="./services.html">USER</a></li>
+              <li><a href="{% url 'index' %}">Home</a></li>
+              <li><a href="{% url 'aboutus' %}">About Us</a></li>
+              <li><a href="{% url 'details' %}">EQUIPMENTS</a></li>
+              <li><a href="{% url 'user' %}">USER</a></li>
               <!-- <li><a href="./team.html">Our Team</a></li> -->
               <li><a href="#">Pages</a>
                   <ul class="dropdown">
@@ -84,17 +84,17 @@
                 <div class="col-lg-6">
                     <nav class="nav-menu">
                         <ul>
-                            <li><a href="./index.html">Home</a></li>
-                            <li class="active"><a href="./about-us.html">About Us</a></li>
-                            <li><a href="./class-details.html">Equipments</a></li>
-                            <li><a href="./services.html">USER</i></a></li>
+                            <li><a href="{% url 'index' %}">Home</a></li>
+                            <li class="active"><a href="{% url 'aboutus' %}">About Us</a></li>
+                            <li><a href="{% url 'details' %}">Equipments</a></li>
+                            <li><a href="{% url 'user' %}">USER</i></a></li>
                             <!-- <li><a href="./team.html">Our Team</a></li> -->
                             <li><a href="#">Pages</a>
                                 <ul class="dropdown">
-                                    <li><a href="./index.html">Home</a></li>
+                                    <li><a href="{% url 'index' %}">Home</a></li>
                                     <li><a href="#client">Reviews</a></li>
-                                    <li><a href="./cart_page.html">My Cart</a></li>
-                                    <li><a href="./your_orders.html">My Orders</a></li>
+                                    <li><a href="{% url 'cartpage' %}">My Cart</a></li>
+                                    <li><a href="{% url 'yourorders' %}">My Orders</a></li>
                                     <!-- <li><a href="./404.html">404</a></li> -->
                                 </ul>
                             </li>
@@ -130,7 +130,7 @@
                     <div class="breadcrumb-text">
                         <h2>About us</h2>
                         <div class="bt-option">
-                            <a href="./index.html">Home</a>
+                            <a href="{% url 'index' %}">Home</a>
                             <span>About</span>
                         </div>
                     </div>

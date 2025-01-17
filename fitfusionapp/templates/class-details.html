@@ -44,10 +44,10 @@
         </div>
         <!-- <nav class="canvas-menu mobile-menu" style="color: black;"> -->
             <ul>
-                <li><a href="./index.html" style="color: black;">Home</a></li>
-                <li><a href="./about-us.html" style="color: black;">About Us</a></li>
-                <li><a href="./class-details.html" style="color: black;">EQUIPMENTS</a></li>
-                <li><a href="./services.html" style="color: black;">USER</a></li>
+                <li><a href="{% url 'index' %}" style="color: black;">Home</a></li>
+                <li><a href="{% url 'aboutus' %}" style="color: black;">About Us</a></li>
+                <li><a href="{% url 'details' %}" style="color: black;">EQUIPMENTS</a></li>
+                <li><a href="{% url 'user' %}" style="color: black;">USER</a></li>
                 <!-- <li><a href="./team.html">Our Team</a></li> -->
                 <!-- <li><a href="#">Pages</a> -->
                     <!-- <ul class="dropdown"> -->
@@ -88,10 +88,10 @@
                 <div class="col-lg-6">
                     <nav class="nav-menu">
                         <ul>
-                            <li><a href="./index.html">Home</a></li>
-                            <li><a href="./about-us.html">About Us</a></li>
-                            <li class="active"><a href="./class-details.html">Equipments</a></li>
-                            <li><a href="./services.html">USER</a></li>
+                            <li><a href="{% url 'index' %}">Home</a></li>
+                            <li><a href="{% url 'aboutus' %}">About Us</a></li>
+                            <li class="active"><a href="{% url 'details' %}">Equipments</a></li>
+                            <li><a href="{% url 'user' %}">USER</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -144,7 +144,7 @@
                         <p class="card-title">Sponsored!</p>
                         <p class="card-text">
                             <b style="color: black;">
-                                <a href="./overview_products.html" style="color: black;">Lifelong Adjustable Dumbbell for Home Gym - 1.5kg to 16kg Easy Dumbbell Weight Adjustment - Iron Weights - Gym Equipment suitable for fitness workout at Home for Men & Women, Black (LLAD03)</a>
+                                <a href="{% url 'overproduct' %}" style="color: black;">Lifelong Adjustable Dumbbell for Home Gym - 1.5kg to 16kg Easy Dumbbell Weight Adjustment - Iron Weights - Gym Equipment suitable for fitness workout at Home for Men & Women, Black (LLAD03)</a>
                             </b>
                         </p>
                         <div class="tt-rating">
@@ -162,10 +162,10 @@
                     </div>
                     <div class="card-body">
                         <button class="rounded-pill" style="background-color: orangered;">
-                            <a style="color: white;" href="./cart_page.html" class="card-link">Add to cart</a>
+                            <a style="color: white;" href="{% url 'cartpage' %}" class="card-link">Add to cart</a>
                         </button>
                         <button class="rounded-pill" style="margin-left: 60px; background-color: orangered;">
-                            <a style="color: white;" href="./overview_products.html" class="card-link">Buy Now</a>
+                            <a style="color: white;" href="{% url 'overproduct' %}" class="card-link">Buy Now</a>
                         </button>
                     </div>
                 </div>
@@ -178,7 +178,7 @@
                         <p class="card-title">Sponsored!</p>
                         <p class="card-text">
                             <b style="color: black;">
-                                <a href="./training_kit.html" style="color: black;">Burnlab 6 in 1 multifunctional weight training kit - Dumbbells, Kettlebells, Barbells & Push up brackets in 1 | Adjustable Weights | Perfect for Full Body Workout for Men & Women (20.00, Kilograms)</a>
+                                <a href="{% url 'kit' %}" style="color: black;">Burnlab 6 in 1 multifunctional weight training kit - Dumbbells, Kettlebells, Barbells & Push up brackets in 1 | Adjustable Weights | Perfect for Full Body Workout for Men & Women (20.00, Kilograms)</a>
                             </b>
                         </p>
                         <div class="tt-rating">
@@ -196,10 +196,10 @@
                     </div>
                     <div class="card-body">
                         <button class="rounded-pill" style="background-color: orangered;">
-                            <a style="color: white;" href="./cart_page.html" class="card-link">Add to cart</a>
+                            <a style="color: white;" href="{% url 'cartpage' %}" class="card-link">Add to cart</a>
                         </button>
                         <button class="rounded-pill" style="margin-left: 60px; background-color: orangered;">
-                            <a style="color: white;" href="./training_kit.html" class="card-link">Buy Now</a>
+                            <a style="color: white;" href="{% url 'kit' %}" class="card-link">Buy Now</a>
                         </button>
                     </div>
                 </div>
@@ -219,7 +219,7 @@
                         <p class="card-title">Sponsored!</p>
                         <p class="card-text">
                             <b style="color: black;">
-                                <a href="./Foldable_gymbench.html" style="color: black;">Kobo Adjustable Dumbbell Bench Flat Incline Decline || Exercise Bench Multipurpose || Dumbbell Bench Foldable (Imported, 120 Kilograms)</a>
+                                <a href="{% url 'foldablebench' %}" style="color: black;">Kobo Adjustable Dumbbell Bench Flat Incline Decline || Exercise Bench Multipurpose || Dumbbell Bench Foldable (Imported, 120 Kilograms)</a>
                             </b>
                         </p>
                         <div class="tt-rating">
@@ -237,10 +237,10 @@
                     </div>
                     <div class="card-body">
                         <button class="rounded-pill" style="background-color: orangered;">
-                            <a style="color: white;" href="./cart_page.html" class="card-link">Add to cart</a>
+                            <a style="color: white;" href="{% url 'cartpage' %}" class="card-link">Add to cart</a>
                         </button>
                         <button class="rounded-pill" style="margin-left: 60px; background-color: orangered;">
-                            <a style="color: white;" href="./Foldable_gymbench.html" class="card-link">Buy Now</a>
+                            <a style="color: white;" href="{% url 'foldablebench' %}" class="card-link">Buy Now</a>
                         </button>
                     </div>
                 </div>
@@ -253,7 +253,7 @@
                         <p class="card-title">Sponsored!</p>
                         <p class="card-text">
                             <b style="color: black;">
-                                <a href="./cast_iron_dumbell.html" style="color: black;">PowerMax Fitness Adjustable Dumbbell Set - Coated Iron Dumbbell and Anti-Slip Rod Set for Home Workout with Carry Case</a>
+                                <a href="{% url 'dumbell' %}" style="color: black;">PowerMax Fitness Adjustable Dumbbell Set - Coated Iron Dumbbell and Anti-Slip Rod Set for Home Workout with Carry Case</a>
                             </b>
                         </p>
                         <div class="tt-rating">
@@ -271,10 +271,10 @@
                     </div>
                     <div class="card-body">
                         <button class="rounded-pill" style="background-color: orangered;">
-                            <a style="color: white;" href="./cart_page.html" class="card-link">Add to cart</a>
+                            <a style="color: white;" href="{% url 'cartpage' %}" class="card-link">Add to cart</a>
                         </button>
                         <button class="rounded-pill" style="margin-left: 60px; background-color: orangered;">
-                            <a style="color: white;" href="./cast_iron_dumbell.html" class="card-link">Buy Now</a>
+                            <a style="color: white;" href="{% url 'dumbell' %}" class="card-link">Buy Now</a>
                         </button>
                     </div>
                 </div>
