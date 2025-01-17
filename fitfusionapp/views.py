@@ -58,11 +58,29 @@ def register(request):
 
             
 
-   
+from .models import contactdetail
+from .forms import contactform
 
 def contact(request):
-    template=loader.get_template('contact.html')
-    return HttpResponse(template.render())
+    if request.method == 'POST':
+        form = contactform(request.POST)
+        if form.is_valid():
+            if form.is_valid():
+                form.save()
+                return redirect('contacts')
+        
+    else:
+        form=contactform()
+
+    return render(request,'contact.html',{'form':form})
+
+def contacts(request):
+    det=contactdetail.objects.all()
+    return render(request,'services.html',{'det':det})
+
+            
+        
+
 def kit(request):
     template=loader.get_template('training_kit.html')
     return HttpResponse(template.render())
@@ -72,9 +90,21 @@ def overproduct(request):
 def summary(request):
     template=loader.get_template('order_summary.html')
     return HttpResponse(template.render())
+
+# from .models import bench
 def foldablebench(request):
-    template=loader.get_template('Foldable_gymbench.html')
-    return HttpResponse(template.render())
+    # if request.method == 'POST':
+    #     name=request.POST.get('name')
+    #     price=request.POST.get('price')
+    #     quantity=request.POST.get('quantity')
+    #     description=request.POST.get('description')
+    #     image=request.FILES.get('image')
+
+    #     productlist= bench.objects.create()
+     template=loader.get_template('Foldable_gymbench.html')
+     return HttpResponse(template.render())
+
+
 def cartpage(request):
     template=loader.get_template('cart_page.html')
     return HttpResponse(template.render())
