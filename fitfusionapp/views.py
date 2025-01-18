@@ -1,4 +1,4 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect,get_object_or_404
 
 # Create your views here.
 from django.http import HttpResponse
@@ -65,7 +65,6 @@ def contact(request):
     if request.method == 'POST':
         form = contactform(request.POST)
         if form.is_valid():
-            if form.is_valid():
                 form.save()
                 return redirect('contacts')
         
@@ -91,18 +90,14 @@ def summary(request):
     template=loader.get_template('order_summary.html')
     return HttpResponse(template.render())
 
-# from .models import bench
+from .models import bench
 def foldablebench(request):
-    # if request.method == 'POST':
-    #     name=request.POST.get('name')
-    #     price=request.POST.get('price')
-    #     quantity=request.POST.get('quantity')
-    #     description=request.POST.get('description')
-    #     image=request.FILES.get('image')
+   product = bench.objects.all()
+   return render(request, 'class-details.html', {'product':product})
 
-    #     productlist= bench.objects.create()
-     template=loader.get_template('Foldable_gymbench.html')
-     return HttpResponse(template.render())
+def productdetail(request, product_id):
+    equipment = get_object_or_404(bench, id=product_id)
+    return render(request, 'renderproduct.html' , {'equipment':equipment})
 
 
 def cartpage(request):
@@ -122,4 +117,13 @@ def dumbell(request):
     return HttpResponse(template.render())
 def details(request):
     template=loader.get_template('class-details.html')
+    return HttpResponse(template.render())
+def myaccount(request):
+    template=loader.get_template('myaccount.html')
+    return HttpResponse(template.render())
+def main(request):
+    template=loader.get_template('myaccountmain.html')
+    return HttpResponse(template.render())
+def reproduct(request):
+    template=loader.get_template('renderproduct.html')
     return HttpResponse(template.render())

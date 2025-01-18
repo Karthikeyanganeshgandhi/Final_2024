@@ -15,10 +15,6 @@ class registerform(forms.Form):
     passwd=forms.CharField(widget=forms.PasswordInput, required=True)
     phone_number=forms.IntegerField()
 
-# class productform(forms.ModelForm):
-#     class Meta:
-#         model=bench
-#         fields=['name','price','quantity','description','image']
 
 class contactform(forms.ModelForm):
     class Meta:

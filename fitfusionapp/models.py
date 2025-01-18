@@ -1,14 +1,13 @@
 from django.db import models
 
-# class bench(models.Model):
-#     name = models.CharField(max_length=100)
-#     price = models.DecimalField(max_digits=10, decimal_places=2)
-#     quantity = models.IntegerField()
-#     description = models.TextField()
-#     image = models.ImageField(upload_to='images/')
+class bench(models.Model):
+    name = models.CharField(max_length=100)
+    price = models.DecimalField(max_digits=10, decimal_places=2)
+    description = models.TextField()
+    image = models.ImageField(upload_to='images/')
 
-#     def __str__(self):
-#         return self.name
+    def __str__(self):
+        return self.name
 
 class contactdetail(models.Model):
     name=models.CharField(max_length=100)

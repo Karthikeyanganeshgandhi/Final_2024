@@ -18,4 +18,9 @@ urlpatterns = [
     path('dumbell/',views.dumbell,name='dumbell'),
     path('details/',views.details,name='details'),
     path('contacts/',views.contacts,name='contacts'),
+    path('myaccount/',views.myaccount,name='myaccount'),
+    path('main/',views.main,name='main'),
+    path('reproduct/',views.reproduct,name='reproduct'),
+    path('equipment/<int:product_id>/',views.productdetail,name='productdetail'),
+
 ]
