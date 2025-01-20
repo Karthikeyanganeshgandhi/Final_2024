@@ -1,0 +1,267 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ equipment.name }} - Details</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/342d33497c.js" crossorigin="anonymous"></script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg,); /* Gradient background */
+            color: #fff;
+            overflow-x: hidden;
+            font-size: 1rem;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+        }
+
+        header:hover {
+            background-color: rgba(0, 0, 0, 1);
+        }
+
+        .logo img {
+            height: 80px;
+            width: auto;
+        }
+
+        .nav-menu ul {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+            font-size: 1.2rem;
+        }
+
+        .nav-menu ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease, transform 0.2s ease-in-out;
+        }
+
+        .nav-menu ul li a:hover {
+            color: orangered;
+            transform: scale(1.1);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-align: left;
+            padding: 6rem 2rem;
+            background: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border-radius: 12px;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .hero-section:hover {
+            transform: scale(1.02);
+        }
+
+        .product-wrapper {
+            display: flex;
+            gap: 2rem;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        /* Image Section */
+        .product-imgs img {
+            max-width: 60%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-imgs img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+        }
+
+        /* Content Section */
+        .product-content {
+            max-width: 45%;
+        }
+
+        .product-content h2 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: orangered;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+        }
+
+        .product-content p {
+            font-size: 1.1rem;
+            margin: 1rem 0;
+            color: #ccc;
+        }
+
+        .product-price {
+            font-size: 2rem;
+            font-weight: bold;
+            color: white;
+            margin: 1.2rem 0;
+        }
+
+        .purchase-info .btn {
+            padding: 0.7rem 2.5rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 30px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-right: 1rem;
+        }
+
+        .purchase-info .btn:first-of-type {
+            background: linear-gradient(45deg, #6a11cb, #2575fc);
+            color: white;
+        }
+
+        .purchase-info .btn:last-of-type {
+            background: linear-gradient(45deg, #ff416c, #ff4b2b);
+            color: white;
+        }
+
+        .purchase-info .btn:hover {
+            transform: scale(1.1);
+            filter: brightness(0.9);
+        }
+
+        footer {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 3rem 0;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        footer h6 {
+            color: orangered;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        footer ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        footer ul li a:hover {
+            color: orangered;
+        }
+
+        .fa-social a {
+            margin: 0 1rem;
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .fa-social a:hover {
+            color: orangered;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="logo">
+                <a href="./index.html">
+                    <img src="{% static 'img/an_attractive_logo_with_the_name_FIT_FUSION_using_a_dumbbell_only-removebg-preview.png' %}" alt="FIT FUSION LOGO">
+                </a>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="{% url 'index' %}">Home</a></li>
+                    <li><a href="{% url 'aboutus' %}">About Us</a></li>
+                    <li><a href="{% url 'details' %}">Equipments</a></li>
+                    <li><a href="{% url 'user' %}">User</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero-section mt-5">
+        <div class="container">
+            <div class="product-wrapper">
+                <div class="product-imgs">
+                    {% if equipment.image %}
+                        <img src="{{ equipment.image.url }}" alt="{{ equipment.name }}">
+                    {% endif %}
+                </div>
+                <div class="product-content">
+                    <h2>{{ equipment.name }}</h2>
+                    <p>{{ equipment.description }}</p>
+                    <div class="product-price">${{ equipment.price }}</div>
+                    <div class="purchase-info">
+                        <button class="btn">
+                            <a href="{% url 'add' equipment.id %}" style="color: white; text-decoration: none;">Add to Cart</a>
+                        </button>
+                        <button class="btn">
+                            <a href="{% url 'summary' %}" style="color: white; text-decoration: none;">Buy Now</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <h6>Contact Us</h6>
+        <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms</a></li>
+        </ul>
+        <div class="fa-social">
+            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+    </footer>
+</body>
+</html>

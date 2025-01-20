@@ -7,6 +7,9 @@ from .forms import signform
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
 from django.contrib.auth.models import User
+from .models import CartItem
+from django.contrib.auth.decorators import login_required
+
 
 def index(request):
     template = loader.get_template('index.html')
@@ -90,19 +93,42 @@ def summary(request):
     template=loader.get_template('order_summary.html')
     return HttpResponse(template.render())
 
+from django.shortcuts import render,redirect,get_object_or_404
 from .models import bench
 def foldablebench(request):
-   product = bench.objects.all()
-   return render(request, 'class-details.html', {'product':product})
-
-def productdetail(request, product_id):
-    equipment = get_object_or_404(bench, id=product_id)
-    return render(request, 'renderproduct.html' , {'equipment':equipment})
-
-
-def cartpage(request):
-    template=loader.get_template('cart_page.html')
+    template=loader.get_template('Foldable_gymbench.html')
     return HttpResponse(template.render())
+
+
+@login_required
+def cartpage(request):
+    cartitems = CartItem.objects.filter(user=request.user)
+    total_quantity = sum(item.quantity for item in cartitems)
+    total_price = sum(item.total() for item in cartitems)
+    return render(request, 'cart_page.html', {'cartitems': cartitems, 'total_quantity': total_quantity, 'total_price': total_price})
+@login_required
+def add(request, product_id):
+    product = get_object_or_404(bench, pk=product_id)
+    cart_item, created = CartItem.objects.get_or_create(user=request.user, product = product)
+    if not created:
+        cart_item.quantity += 1
+        cart_item.save()
+    return redirect('cartpage')
+@login_required
+def remove(request, cart_item_id):
+    cart_item = get_object_or_404(CartItem, pk=cart_item_id, user=request.user)
+    cart_item.delete()
+    return redirect('cartpage')
+@login_required
+def update(request, cart_item_id):
+    cart_item = get_object_or_404(CartItem, pk=cart_item_id, user=request.user)
+    if request.method == 'POST':
+        quantity = request.POST.get('quantity')
+        if quantity.isdigit() and int(quantity) > 0:
+            cart_item.quantity = int(quantity)
+            cart_item.save()
+    return redirect('cartpage')
+
 def address(request):
     template=loader.get_template('addresses.html')
     return HttpResponse(template.render())
@@ -116,8 +142,13 @@ def dumbell(request):
     template=loader.get_template('cast_iron_dumbell.html')
     return HttpResponse(template.render())
 def details(request):
-    template=loader.get_template('class-details.html')
-    return HttpResponse(template.render())
+    products = bench.objects.all()
+    return render(request, 'class-details.html', {'products':products})
+
+def prdetail(request, product_id):
+    equipment = get_object_or_404(bench, pk=product_id)
+    return render(request, 'renproduct.html' , {'equipment':equipment})
+
 def myaccount(request):
     template=loader.get_template('myaccount.html')
     return HttpResponse(template.render())
@@ -125,5 +156,5 @@ def main(request):
     template=loader.get_template('myaccountmain.html')
     return HttpResponse(template.render())
 def reproduct(request):
-    template=loader.get_template('renderproduct.html')
+    template=loader.get_template('renproduct.html')
     return HttpResponse(template.render())

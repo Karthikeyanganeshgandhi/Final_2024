@@ -79,11 +79,11 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-3">
-                    <div class="logo">
-                        <a href="./index.html">
+                    <!-- <div class="logo"> -->
+                        <!-- <a href="./index.html"> -->
                             <!-- <img src="{% static 'img/logo.png' %}" alt=""> -->
-                        </a>
-                    </div>
+                        <!-- </a> -->
+                    <!-- </div> -->
                 </div>
                 <div class="col-lg-6">
                     <nav class="nav-menu">
@@ -134,156 +134,172 @@
         </div>
     </section>
     <!-- Breadcrumb Section End -->
-
-    <div class="container">
-        <div class="row mt-5">
-            <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
-                <div class="card" style="width: 18rem;">
-                    <img src="{% static 'Equipments/61aKPyLHleL._SL1500_.jpg' %}" class="card-img-top img-fluid" alt="...">
-                    <div class="card-body">
-                        <p class="card-title">Sponsored!</p>
-                        <p class="card-text">
-                            <b style="color: black;">
-                                <a href="{% url 'overproduct' %}" style="color: black;">Lifelong Adjustable Dumbbell for Home Gym - 1.5kg to 16kg Easy Dumbbell Weight Adjustment - Iron Weights - Gym Equipment suitable for fitness workout at Home for Men & Women, Black (LLAD03)</a>
-                            </b>
-                        </p>
-                        <div class="tt-rating">
-                            <i class="fa fa-star" style="color: gold;"></i>
-                            <i class="fa fa-star" style="color: gold;"></i>
-                            <i class="fa fa-star" style="color: gold;"></i>
-                            <i class="fa fa-star" style="color: gold;"></i>
-                            <i class="fa fa-star" style="color: gold;"></i><br>
-                            <button style="color: white; width: 120px; background-color: brown; font-size: 13px;">Limited time Deal</button><br><br>
-                            <p><span style="color: black; font-size: 10px;">₹</span><span style="color: black; font-size: 30px;">4,368</span> M.R.P: <del>9,000</del> <span style="color: black;">(26% off)</span><br>
-                                Save extra with No Cost EMI<br>
-                                <span style="color: black;"> Free delivery as soon as <b>Mon, 16 Dec, 7 am - 9 pm</b></span><br>
-                                <span style="color: orangered;">Only 2 left in stock.</span></p>
+    <section>
+        <div class="container">
+            <div class="row mt-5">
+                <!-- Product Card 1 -->
+                <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+                    <div class="card shadow-sm rounded-lg border-0" style="width: 18rem;">
+                        <img src="{% static 'Equipments/61aKPyLHleL._SL1500_.jpg' %}" class="card-img-top img-fluid rounded-top" alt="...">
+                        <div class="card-body text-center">
+                            <p class="card-title text-muted">Sponsored!</p>
+                            <p class="card-text">
+                                <b style="color: black;">
+                                    <a href="{% url 'overproduct' %}" class="text-dark text-decoration-none">16kg Easy Dumbbell Weight Adjustment - Iron Weights - Gym Equipment for Men & Women, </a>
+                                </b>
+                            </p>
+                            <div class="tt-rating mb-3">
+                                <i class="fa fa-star" style="color: gold;"></i>
+                                <i class="fa fa-star" style="color: gold;"></i>
+                                <i class="fa fa-star" style="color: gold;"></i>
+                                <i class="fa fa-star" style="color: gold;"></i>
+                                <i class="fa fa-star" style="color: gold;"></i>
+                            </div>
+                            <button class="btn btn-warning btn-sm mb-2">Limited time Deal</button><br>
+                            <p class="price">
+                                <span style="font-size: 12px; color: #555;">₹</span><span style="font-size: 28px; color: #333;">4,368</span> 
+                                <span style="font-size: 14px; text-decoration: line-through; color: #999;">M.R.P: ₹9,000</span>
+                                <span class="text-success" style="font-size: 14px;">(26% off)</span><br>
+                                <span style="font-size: 14px;">Free delivery by <b>Mon, 16 Dec, 7 am - 9 pm</b></span><br>
+                                <span class="text-danger" style="font-size: 14px;">Only 2 left in stock!</span>
+                            </p>
+                        </div>
+                        <div class="card-body text-center">
+                            <button class="btn btn-danger rounded-pill w-75 mb-2">
+                                <a href="{% url 'cartpage' %}" class="text-white text-decoration-none">Add to cart</a>
+                            </button>
+                            <button class="btn btn-primary rounded-pill w-75">
+                                <a href="{% url 'prdetail' product_id=4 %}" class="text-white text-decoration-none">Buy Now</a>
+                            </button>
                         </div>
                     </div>
-                    <div class="card-body">
-                        <button class="rounded-pill" style="background-color: orangered;">
-                            <a style="color: white;" href="{% url 'cartpage' %}" class="card-link">Add to cart</a>
-                        </button>
-                        <button class="rounded-pill" style="margin-left: 60px; background-color: orangered;">
-                            <a style="color: white;" href="{% url 'overproduct' %}" class="card-link">Buy Now</a>
-                        </button>
-                    </div>
                 </div>
-            </div>
-
-            <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
-                <div class="card" style="width: 18rem;">
-                    <img src="{% static 'Equipments/619El5HwYeL._SL1080_.jpg' %}" class="card-img-top img-fluid" alt="...">
-                    <div class="card-body">
-                        <p class="card-title">Sponsored!</p>
-                        <p class="card-text">
-                            <b style="color: black;">
-                                <a href="{% url 'kit' %}" style="color: black;">Burnlab 6 in 1 multifunctional weight training kit - Dumbbells, Kettlebells, Barbells & Push up brackets in 1 | Adjustable Weights | Perfect for Full Body Workout for Men & Women (20.00, Kilograms)</a>
-                            </b>
-                        </p>
-                        <div class="tt-rating">
-                            <i class="fa fa-star" style="color: gold;"></i>
-                            <i class="fa fa-star" style="color: gold;"></i>
-                            <i class="fa fa-star" style="color: gold;"></i>
-                            <i class="fa fa-star" style="color: gold;"></i>
-                            <i class="fa fa-star" style="color: gold;"></i><br>
-                            <button style="color: white; width: 120px; background-color: brown; font-size: 13px;">Limited time Deal</button><br><br>
-                            <p><span style="color: black; font-size: 10px;">₹</span><span style="color: black; font-size: 30px;">4,875</span> M.R.P: <del>7,000</del> <span style="color: black;">(26% off)</span><br>
-                                Save extra with No Cost EMI<br>
-                                <span style="color: black;"> Free delivery as soon as <b>Mon, 16 Dec, 7 am - 9 pm</b></span><br>
-                                <span style="color: orangered;">Only 2 left in stock.</span></p>
+    
+                <!-- Product Card 2 -->
+                <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+                    <div class="card shadow-sm rounded-lg border-0" style="width: 18rem;">
+                        <img src="{% static 'Equipments/619El5HwYeL._SL1080_.jpg' %}" class="card-img-top img-fluid rounded-top" alt="...">
+                        <div class="card-body text-center">
+                            <p class="card-title text-muted">Sponsored!</p>
+                            <p class="card-text">
+                                <b style="color: black;">
+                                    <a href="{% url 'kit' %}" class="text-dark text-decoration-none">Burnlab 6 in 1 multifunctional weight training kit - Dumbbells, Kettlebells, Barbells & Push up brackets in 1</a>
+                                </b>
+                            </p>
+                            <div class="tt-rating mb-3">
+                                <i class="fa fa-star" style="color: gold;"></i>
+                                <i class="fa fa-star" style="color: gold;"></i>
+                                <i class="fa fa-star" style="color: gold;"></i>
+                                <i class="fa fa-star" style="color: gold;"></i>
+                                <i class="fa fa-star" style="color: gold;"></i>
+                            </div>
+                            <button class="btn btn-warning btn-sm mb-2">Limited time Deal</button><br>
+                            <p class="price">
+                                <span style="font-size: 12px; color: #555;">₹</span><span style="font-size: 28px; color: #333;">4,875</span> 
+                                <span style="font-size: 14px; text-decoration: line-through; color: #999;">M.R.P: ₹7,000</span>
+                                <span class="text-success" style="font-size: 14px;">(30% off)</span><br>
+                                <span style="font-size: 14px;">Free delivery by <b>Mon, 16 Dec, 7 am - 9 pm</b></span><br>
+                                <span class="text-danger" style="font-size: 14px;">Only 2 left in stock!</span>
+                            </p>
+                        </div>
+                        <div class="card-body text-center">
+                            <button class="btn btn-danger rounded-pill w-75 mb-2">
+                                <a href="{% url 'cartpage' %}" class="text-white text-decoration-none">Add to cart</a>
+                            </button>
+                            <button class="btn btn-primary rounded-pill w-75">
+                                <a href="{% url 'prdetail' product_id=3 %}" class="text-white text-decoration-none">Buy Now</a>
+                            </button>
                         </div>
                     </div>
-                    <div class="card-body">
-                        <button class="rounded-pill" style="background-color: orangered;">
-                            <a style="color: white;" href="{% url 'cartpage' %}" class="card-link">Add to cart</a>
-                        </button>
-                        <button class="rounded-pill" style="margin-left: 60px; background-color: orangered;">
-                            <a style="color: white;" href="{% url 'kit' %}" class="card-link">Buy Now</a>
-                        </button>
-                    </div>
                 </div>
+    
+                <!-- Additional Product Cards (Repeat the structure for other products below) -->
+    
             </div>
-
-            <!-- Add similar changes for the other products below -->
-
         </div>
-    </div>
-
-    <div class="container">
-        <div class="row mt-5">
-            <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
-                <div class="card" style="width: 18rem;">
-                    <img src="{% static 'Equipments/61HGj31DJQL._SL1500_.jpg' %}" class="card-img-top img-fluid" alt="...">
-                    <div class="card-body">
-                        <p class="card-title">Sponsored!</p>
-                        <p class="card-text">
-                            <b style="color: black;">
-                                <a href="{% url 'foldablebench' %}" style="color: black;">Kobo Adjustable Dumbbell Bench Flat Incline Decline || Exercise Bench Multipurpose || Dumbbell Bench Foldable (Imported, 120 Kilograms)</a>
-                            </b>
-                        </p>
-                        <div class="tt-rating">
-                            <i class="fa fa-star" style="color: gold;"></i>
-                            <i class="fa fa-star" style="color: gold;"></i>
-                            <i class="fa fa-star" style="color: gold;"></i>
-                            <i class="fa fa-star" style="color: gold;"></i>
-                            <i class="fa fa-star" style="color: gold;"></i><br>
-                            <button style="color: white; width: 120px; background-color: brown; font-size: 13px;">Limited time Deal</button><br><br>
-                            <p><span style="color: black; font-size: 10px;">₹</span><span style="color: black; font-size: 30px;">5,699</span> M.R.P: <del>7,800</del> <span style="color: black;">(26% off)</span><br>
-                                Save extra with No Cost EMI<br>
-                                <span style="color: black;"> Free delivery as soon as <b>Mon, 16 Dec, 7 am - 9 pm</b></span><br>
-                                <span style="color: orangered;">Only 2 left in stock.</span></p>
+    
+        <!-- Additional Products Section -->
+        <div class="container">
+            <div class="row mt-5">
+                <!-- Product Card 3 -->
+                <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+                    <div class="card shadow-sm rounded-lg border-0" style="width: 18rem;">
+                        <img src="{% static 'Equipments/61HGj31DJQL._SL1500_.jpg' %}" class="card-img-top img-fluid rounded-top" alt="...">
+                        <div class="card-body text-center">
+                            <p class="card-title text-muted">Sponsored!</p>
+                            <p class="card-text">
+                                <b style="color: black;">
+                                    <a href="{% url 'foldablebench' %}" class="text-dark text-decoration-none">Kobo Adjustable Dumbbell Bench - Foldable & Multipurpose</a>
+                                </b>
+                            </p>
+                            <div class="tt-rating mb-3">
+                                <i class="fa fa-star" style="color: gold;"></i>
+                                <i class="fa fa-star" style="color: gold;"></i>
+                                <i class="fa fa-star" style="color: gold;"></i>
+                                <i class="fa fa-star" style="color: gold;"></i>
+                                <i class="fa fa-star" style="color: gold;"></i>
+                            </div>
+                            <button class="btn btn-warning btn-sm mb-2">Limited time Deal</button><br>
+                            <p class="price">
+                                <span style="font-size: 12px; color: #555;">₹</span><span style="font-size: 28px; color: #333;">5,699</span> 
+                                <span style="font-size: 14px; text-decoration: line-through; color: #999;">M.R.P: ₹7,800</span>
+                                <span class="text-success" style="font-size: 14px;">(26% off)</span><br>
+                                <span style="font-size: 14px;">Free delivery by <b>Mon, 16 Dec, 7 am - 9 pm</b></span><br>
+                                <span class="text-danger" style="font-size: 14px;">Only 2 left in stock!</span>
+                            </p>
+                        </div>
+                        <div class="card-body text-center">
+                            <button class="btn btn-danger rounded-pill w-75 mb-2">
+                                <a href="{% url 'cartpage' %}" class="text-white text-decoration-none">Add to cart</a>
+                            </button>
+                            <button class="btn btn-primary rounded-pill w-75">
+                                <a href="{% url 'prdetail' product_id=1 %}" class="text-white text-decoration-none">Buy Now</a>
+                            </button>
                         </div>
                     </div>
-                    <div class="card-body">
-                        <button class="rounded-pill" style="background-color: orangered;">
-                            <a style="color: white;" href="{% url 'cartpage' %}" class="card-link">Add to cart</a>
-                        </button>
-                        <button class="rounded-pill" style="margin-left: 60px; background-color: orangered;">
-                            <a style="color: white;" href="{% url 'productdetail' product_id=1 %}" class="card-link">Buy Now</a>
-                        </button>
+                </div>
+    
+                <!-- Product Card 4 -->
+                <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+                    <div class="card shadow-sm rounded-lg border-0" style="width: 18rem;">
+                        <img src="{% static 'Equipments/71LpwXdbmcL._SL1500_.jpg' %}" class="card-img-top img-fluid rounded-top" alt="...">
+                        <div class="card-body text-center">
+                            <p class="card-title text-muted">Sponsored!</p>
+                            <p class="card-text">
+                                <b style="color: black;">
+                                    <a href="{% url 'dumbell' %}" class="text-dark text-decoration-none">PowerMax Fitness Adjustable Dumbbell Set</a>
+                                </b>
+                            </p>
+                            <div class="tt-rating mb-3">
+                                <i class="fa fa-star" style="color: gold;"></i>
+                                <i class="fa fa-star" style="color: gold;"></i>
+                                <i class="fa fa-star" style="color: gold;"></i>
+                                <i class="fa fa-star" style="color: gold;"></i>
+                                <i class="fa fa-star" style="color: gold;"></i>
+                            </div>
+                            <button class="btn btn-warning btn-sm mb-2">Limited time Deal</button><br>
+                            <p class="price">
+                                <span style="font-size: 12px; color: #555;">₹</span><span style="font-size: 28px; color: #333;">9,299</span> 
+                                <span style="font-size: 14px; text-decoration: line-through; color: #999;">M.R.P: ₹19,000</span>
+                                <span class="text-success" style="font-size: 14px;">(26% off)</span><br>
+                                <span style="font-size: 14px;">Free delivery by <b>Mon, 16 Dec, 7 am - 9 pm</b></span><br>
+                                <span class="text-danger" style="font-size: 14px;">Only 2 left in stock!</span>
+                            </p>
+                        </div>
+                        <div class="card-body text-center">
+                            <button class="btn btn-danger rounded-pill w-75 mb-2">
+                                <a href="{% url 'cartpage' %}" class="text-white text-decoration-none">Add to cart</a>
+                            </button>
+                            <button class="btn btn-primary rounded-pill w-75">
+                                <a href="{% url 'prdetail' product_id=2 %}" class="text-white text-decoration-none">Buy Now</a>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <div class="col-sm-6 col-md-4 col-lg-3">
-                <div class="card" style="width: 18rem;">
-                    <img src="{% static 'Equipments/71LpwXdbmcL._SL1500_.jpg' %}" class="card-img-top img-fluid" alt="...">
-                    <div class="card-body">
-                        <p class="card-title">Sponsored!</p>
-                        <p class="card-text">
-                            <b style="color: black;">
-                                <a href="{% url 'dumbell' %}" style="color: black;">PowerMax Fitness Adjustable Dumbbell Set - Coated Iron Dumbbell and Anti-Slip Rod Set for Home Workout with Carry Case</a>
-                            </b>
-                        </p>
-                        <div class="tt-rating">
-                            <i class="fa fa-star" style="color: gold;"></i>
-                            <i class="fa fa-star" style="color: gold;"></i>
-                            <i class="fa fa-star" style="color: gold;"></i>
-                            <i class="fa fa-star" style="color: gold;"></i>
-                            <i class="fa fa-star" style="color: gold;"></i><br>
-                            <button style="color: white; width: 120px; background-color: brown; font-size: 13px;">Limited time Deal</button><br><br>
-                            <p><span style="color: black; font-size: 10px;">₹</span><span style="color: black; font-size: 30px;">9,299</span> M.R.P: <del>19,000</del> <span style="color: black;">(26% off)</span><br>
-                                Save extra with No Cost EMI<br>
-                                <span style="color: black;"> Free delivery as soon as <b>Mon, 16 Dec, 7 am - 9 pm</b></span><br>
-                                <span style="color: orangered;">Only 2 left in stock.</span></p>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <button class="rounded-pill" style="background-color: orangered;">
-                            <a style="color: white;" href="{% url 'cartpage' %}" class="card-link">Add to cart</a>
-                        </button>
-                        <button class="rounded-pill" style="margin-left: 60px; background-color: orangered;">
-                            <a style="color: white;" href="{% url 'dumbell' %}" class="card-link">Buy Now</a>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Add similar changes for the other products below -->
-
         </div>
-    </div>
+    </section>
+    
 
 
      <!-- Get In Touch Section Begin -->
@@ -323,9 +339,9 @@
             <div class="row">
                 <div class="col-lg-4">
                     <div class="fs-about">
-                        <div class="fa-logo">
+                        <!-- <div class="fa-logo"> -->
                             <!-- <a href="#"><img src="{% static 'img/logo.png' %}" alt=""></a> -->
-                        </div>
+                        <!-- </div> -->
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore dolore magna aliqua endisse ultrices gravida lorem.</p>
                         <div class="fa-social">
                             <a href="#"><i class="fa fa-facebook"></i></a>
