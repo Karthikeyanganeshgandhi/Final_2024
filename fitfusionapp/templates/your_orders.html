@@ -6,10 +6,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+<!-- --------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,600,700&display=swap" rel="stylesheet">
+<!-- --------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
     <!-- Css Styles -->
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
@@ -25,6 +27,7 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<!-- --------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
     <style>
         /* Custom Media Queries for Responsiveness */
@@ -60,13 +63,18 @@
         }
     </style>
 </head>
+<!-- --------------------------------------------------------------------------------------------------------------------------------------------------- -->
+
 <body>
+
+<!-- --------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
     <!-- Page Preloder -->
     <div id="preloder">
         <div class="loader"></div>
     </div>
 
+<!-- --------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
 
      <!-- Offcanvas Menu Section Begin -->
@@ -107,7 +115,8 @@
      <!-- Offcanvas Menu Section End -->
 
      
- 
+<!-- --------------------------------------------------------------------------------------------------------------------------------------------------- -->
+
 
     <!-- Header Section Begin -->
     <header class="header-section" style="background-color: black;">
@@ -147,65 +156,46 @@
         </div>
     </header>
     <!-- Header End -->
+<!-- --------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
-    <!-- Hero Section Begin -->
-    <section class="hero-section">
-        <div style="margin-top: -400px;">
-        <div class="hs-slider owl-carousel">
-            <div class="hs-item set-bg" data-setbg="">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6 offset-lg-6">
-                            <div class="border-bottom">
-                                <h1><u>My Orders</u></h1>
-                            </div><br>
-
-                            <div class="row">
-                                <div class="col-12 col-md-2 border-bottom mb-5">
-                                    <img src="{% static 'Equipments/61aKPyLHleL._SL1500_.jpg' %}" alt="this is a picture">
-                                </div>
-                                <div class="col-12 col-md-10 border-bottom mb-5">
-                                    Lifelong Adjustable Dumbbell for Home Gym - 1.5kg to 16kg Easy Dumbbell Weight Adjustment - Iron Weights - Gym Equipment suitable for fitness workout at Home for Men & Women, Black (LLAD03)
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-12 col-md-2 border-bottom mb-5">
-                                    <img src="{% static 'Equipments/61HGj31DJQL._SL1500_.jpg' %}" alt="this is a picture">
-                                </div>
-                                <div class="col-12 col-md-10 border-bottom mb-5">
-                                    The Cube Club Neo Heavy Duty Foldable Gym Bench Multipurpose Full Body Workout Weight Bench Press for Men & Women | Multilevel Incline and Decline Exercise Strength Training Fitness Bench.
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-12 col-md-2 border-bottom mb-5">
-                                    <img src="{% static 'Equipments/71LpwXdbmcL._SL1500_.jpg' %}" alt="this is a picture">
-                                </div>
-                                <div class="col-12 col-md-10 border-bottom mb-5">
-                                    Cube Club Adjustable Cast Iron Dumbbell Sets With Portable Packing Box 2In1 Dumbbells Barbell With Connecting Rod,50Kg Home Gym Training Free Weight Set For Men And Women - Multicolor.
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-12 col-md-2 border-bottom mb-5">
-                                    <img src="{% static 'Equipments/619El5HwYeL._SL1080_.jpg' %}" alt="">
-                                </div>
-                                <div class="col-12 col-md-9 border-bottom mb-5">
-                                    6 in 1 multifunctional weight training kit - Dumbbells, Kettlebells, Barbells & Push up brackets in 1 | Adjustable Weights | Perfect for Full Body Workout for Men & Women (12.00, Kilograms).
-                                </div>
-                            </div><br>
-
-                            <a href="{% url 'user' %}"><h5 style="color: black;"><--BACK</h5></a>
-
+   <!-- Hero Section Begin -->
+<section class="hero-section">
+    <div class="container mt-5">
+        <div class="text-center mb-4">
+            <h1><u>My Orders</u></h1>
+        </div>
+        {% if orders %}
+        <div class="row">
+            {% for order in orders %}
+            <div class="col-12 col-md-6 col-lg-4 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Order #{{ order.id }}</h5>
+                        <hr>
+                        <div class="mb-3">
+                            <strong>Items:</strong>
+                            <ul class="list-unstyled">
+                                {% for item in order.items.all %}
+                                <li>{{ item.product.name }} - {{ item.quantity }}</li>
+                                {% endfor %}
+                            </ul>
                         </div>
+                        <a href="{% url 'details' %}" class="btn btn-info btn-sm">Shop Again</a>
                     </div>
                 </div>
             </div>
+            {% endfor %}
         </div>
+        {% else %}
+        <p class="text-center">No orders found</p>
+        {% endif %}
+        <div class="text-center mt-4">
+            <a href="{% url 'user' %}" class="btn btn-secondary">&larr; Back</a>
         </div>
-    </section>
-    <!-- Hero Section End -->
+    </div>
+</section>
+<!-- Hero Section End -->
+<!-- --------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
     <!-- Footer Section Begin -->
     <section class="footer-section">
@@ -278,6 +268,7 @@
         </div>
     </section>
     <!-- Footer Section End -->
+<!-- --------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
     <!-- Search model Begin -->
     <div class="search-model">
@@ -289,6 +280,7 @@
         </div>
     </div>
     <!-- Search model end -->
+<!-- --------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
     <!-- Js Plugins -->
      <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
@@ -299,5 +291,9 @@
     <script src="{% static 'js/jquery.slicknav.js' %}"></script>
     <script src="{% static 'js/owl.carousel.min.js' %}"></script>
     <script src="{% static 'js/main.js' %}"></script>
+<!-- --------------------------------------------------------------------------------------------------------------------------------------------------- -->
+
 </body>
 </html>
+<!-- --------------------------------------------------------------------------------------------------------------------------------------------------- -->
+

@@ -9,10 +9,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register to fit fusion.in</title>
     <script src="https://kit.fontawesome.com/342d33497c.js" crossorigin="anonymous"></script>
+<!-- --------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,600,700&display=swap" rel="stylesheet">
+<!-- --------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
     <!-- Css Styles -->
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
@@ -25,6 +27,7 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<!-- --------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
     <style>
         /* Custom styles for responsiveness */
@@ -149,15 +152,18 @@
             }
         }
     </style>
+<!-- --------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
 </head>
 
 <body>
+<!-- --------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
     <!-- Page Preloder -->
     <!-- <div id="preloder"> 
         <div class="loader"></div>
     </div>>  -->
+<!-- --------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
 
      <!-- Offcanvas Menu Section Begin -->
@@ -196,6 +202,7 @@
          </div>
      </div>
      <!-- Offcanvas Menu Section End -->
+<!-- --------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
     <!-- Header Section Begin -->
     <header class="header-section">
@@ -233,6 +240,7 @@
         </div>
     </header>
     <!-- Header End -->
+<!-- --------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
     <!-- Hero Section Begin -->
     <section class="hero-section">
@@ -281,6 +289,14 @@
 
             <div class="row m-5">
                 <div class="col-4">
+                    <h5 style="color: orangered; font-weight: bold;">Captcha :</h5>
+                    {{ form.captcha }}
+                    {{ form.captcha.errors }}
+                </div>
+            </div>
+
+            <div class="row m-5">
+                <div class="col-4">
                     <button style="color: white; background-color: orangered; width: 100%; height: 45px; font-weight: bold;" class="rounded-pill">SUBMIT</button><br><br>
                     <a href="{% url 'index' %}" style="font-weight: bold; color: black;"><--HOME</a>
                 </div>
@@ -290,6 +306,7 @@
     </section>
 
     <!-- Hero Section End -->
+<!-- --------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
     <!-- Footer Section Begin -->
     <section class="footer-section">
@@ -353,6 +370,7 @@
         </div>
     </section>
     <!-- Footer Section End -->
+<!-- --------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
     <!-- Js Plugins -->
     <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
@@ -363,7 +381,9 @@
     <script src="{% static 'js/jquery.slicknav.js' %}"></script>
     <script src="{% static 'js/owl.carousel.min.js' %}"></script>
     <script src="{% static 'js/main.js' %}"></script>
+<!-- --------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
 </body>
 
 </html>
+<!-- --------------------------------------------------------------------------------------------------------------------------------------------------- -->

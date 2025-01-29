@@ -2,7 +2,7 @@ from django.urls import path
 from fitfusionapp import views
 
 urlpatterns = [
-    path('index/',views.index, name='index'),
+    path('',views.index, name='index'),
     path('aboutus/',views.aboutus,name='aboutus'),
     path('signin/',views.signin,name='signin'),
     path('register/',views.register,name='register'),
@@ -25,5 +25,11 @@ urlpatterns = [
     path('add/<int:product_id>/', views.add, name='add'),
     path('remove/<int:cart_item_id>/', views.remove, name='remove'),
     path('update/<int:cart_item_id>/', views.update, name='update'),
+    path('checkout/', views.checkout, name='checkout'),
+    path('order-summary/<int:order_id>/', views.order_summary, name='order_summary'),
+    path('placed//<int:order_id>/', views.placed, name='placed'),
+    path('payment/<int:order_id>/', views.razorpay_payment, name='razorpay_payment'),   
+
+
 
 ]

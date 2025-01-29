@@ -27,6 +27,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+CAPTCHA_FONT_SIZE = 40
+CAPTCHA_LENGTH = 6
+CAPTCHA_TIMEOUT = 300  # Timeout in seconds
+CAPTCHA_IMAGE_SIZE = (190, 50)
+
 
 # Application definition
 
@@ -38,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'fitfusionapp',
+    'captcha',
 ]
 
 MIDDLEWARE = [
@@ -122,6 +128,14 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     BASE_DIR / "C:/Users/karth/fitfusion/fitfusionproject/fitfusionproject/static",  # assuming you have a static folder at the root of the project
 ]
+
+
+
+
+RAZORPAY_KEY_ID ='rzp_test_N8OgX89d5kCevO'
+RAZORPAY_KEY_SECRET= '0cq7vuOGLWy4A6Fw4fV5c0tM'
+
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 

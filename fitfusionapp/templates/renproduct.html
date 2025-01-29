@@ -6,13 +6,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ equipment.name }} - Details</title>
+<!-- --------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<!-- --------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/342d33497c.js" crossorigin="anonymous"></script>
+<!-- --------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
     <style>
         * {
@@ -206,8 +209,12 @@
         }
     </style>
 </head>
+<!-- --------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
 <body>
+
+<!-- --------------------------------------------------------------------------------------------------------------------------------------------------- -->
+
     <header>
         <div class="container d-flex justify-content-between align-items-center">
             <div class="logo">
@@ -225,6 +232,7 @@
             </nav>
         </div>
     </header>
+<!-- --------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
     <section class="hero-section mt-5">
         <div class="container">
@@ -243,13 +251,14 @@
                             <a href="{% url 'add' equipment.id %}" style="color: white; text-decoration: none;">Add to Cart</a>
                         </button>
                         <button class="btn">
-                            <a href="{% url 'summary' %}" style="color: white; text-decoration: none;">Buy Now</a>
+                            <a href="{% url 'add' equipment.id %}" style="color: white; text-decoration: none;">Buy Now</a>
                         </button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+<!-- --------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
     <footer>
         <h6>Contact Us</h6>
@@ -263,5 +272,8 @@
             <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
         </div>
     </footer>
+<!-- --------------------------------------------------------------------------------------------------------------------------------------------------- -->
+
 </body>
 </html>
+<!-- --------------------------------------------------------------------------------------------------------------------------------------------------- -->
